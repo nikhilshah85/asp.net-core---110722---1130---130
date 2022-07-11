@@ -1,0 +1,170 @@
+dotnet core
+dotnet core features and devlopment structure
+dotnet core cli
+mvc
+webapi 
+EF core - use sql server on cloud
+--------------------------------------
+	Pre-requisite
+	a. OOPS
+	b. Lab for hands-on and assignments
+		a. dotnet core (3.1 minimum version)
+		b. VS code (for day 1 only)
+		c. VS 2019/2022
+		d. SQL Server with SSMS
+	all of this are available in Cloud Lab
+-------------------------------------------
+	a. understand .net core and features
+	b. create .net core app and understand filestructure
+	c. understand .net core feature
+---------------------------------------------
+	Expectations - be interactive
+
+
+
+
+-------------------
+
+
+
+
+
+
+
+
+1. .net framework vs .net core
+	since last 2 years, is on .net core
+
+---------------------------------------------------------------------------
+		This is a start up generation 
+
+		with .net framework
+		1. buy windows for development  pay the licence cost
+		2. Visual studio - licence 
+		3. Production - windows server - IIS - very costly
+-------------------------
+		This is the initial investment cost is to high 
+		4. .net framework has its own problems, which are not good for todays
+			enviroment 
+		5. Cloud !!! - AWS, GCP, IBM
+			       Docker and Kubernetes (Microservices)
+			They are all based on Linux (including Microsoft Azure)
+		6. Change in user behaviour - because of tech (end user) - not developer nor our clients 
+			Web Revolution
+
+
+		we have
+		Node, Angular, express, react etc.....Java was already there
+			
+		This are all open source
+		They are pure cross platform - develop anywhere, use anywhere
+		
+		Linux based, ubuntu, fedora, debian etc... totlly free
+		host it on node, free
+
+
+
+		Change in user behaviour (in detail) 
+		and MS has to re-write the whole framework from scratch - to make it cross platform
+
+	---- u can now develop anywhere - host any anywhere  - use anywhere
+
+
+
+
+			1. When was the first time u used internet ? 
+				Average - 2007
+			2. What did u use internet for 
+				Email, results, ticket booking, surfing
+			3. Which devise was used ?
+				Desktop, Laptop(rare)
+			4. What was the source of internet ?
+				Broadband / LAN / telephone
+		
+
+			Developers developed the websites accordingly
+			And Frameworks was made availble accordingly
+
+			However - today, things has changed
+		
+			1. Internet is used for everything
+			2. Device - today u have mobiles and tables 
+				Resolution - web devloper needs to make sure, page will functional on every
+						resolution
+				Habbits - 
+
+			3. Mobile data - this is fluctuing
+			4. Hardware RAM
+
+		Thus developers would have to change the approach to develop
+		They need framework accordingly
+
+		So google, facebook, twitter, sun micro system, open source community, they came with the 
+			framework to target all of the above challange
+
+		Thus ms came with new code base - .net core 
+			
+-------------------------------------------
+u get a folder 
+		wwwroot - this is for static contents
+
+		css, js, libraries, images, icons etc...
+
+web.config - has changed to appsettings.json
+	from xml to json based configuration
+
+program.cs (for .net core 6)
+
+program.cs (just main method)
+		configuration in startup.cs
+	this is where u configure Middleware and services
+			oAuth
+			cord
+			DI etc....
+views will now use - Razor syntax (short hand JS and C#)
+
+---------------------------------------
+	dotnet new mvc --name employeeMVC
+	dotnet build
+	dotnet run 
+
+
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
