@@ -129,6 +129,58 @@ views will now use - Razor syntax (short hand JS and C#)
 	dotnet run 
 
 
+
+
+
+
+
+
+
+
+
+					MVC - is a web design pattern 
+
+	
+
+
+		Model - Data part of application
+			Data CRUD, Sorting, filter, grouping, data validataion, calculation, transactions etc..
+			(.cs file) in Model folder
+
+		View - UI part of the application
+			HTML, CSS, JS, Bootstrap, UI libraries
+			Razor Syntax
+			Make REST api calls here using fetch api or jquery
+		Contoller
+			listens to request
+			collect data from model
+			pass the data to view
+			return the response
+				and vice versa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			
 			
 

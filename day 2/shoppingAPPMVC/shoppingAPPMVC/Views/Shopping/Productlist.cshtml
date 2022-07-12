@@ -1,0 +1,28 @@
+﻿
+
+<h1 style="text-align:center"> Product List (@ViewBag.totalProducts) </h1>
+
+@*this is HTML page*@
+
+
+@*<ul>
+@foreach (var item in ViewBag.products)
+{
+    <li>@item</li>
+}
+</ul>*@
+
+@*<select>
+    @foreach (var item in ViewBag.products)
+    {
+        <option>@item</option>
+    }
+</select>*@
+
+@foreach (var item in ViewBag.products)
+{
+   @item <input type="checkbox"/>
+}
+    
+
+

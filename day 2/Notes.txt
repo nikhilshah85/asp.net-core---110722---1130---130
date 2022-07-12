@@ -1,0 +1,87 @@
+1.Create a new APP asp.net core MVC
+
+2.go to home controller
+3.add 2 actions About and contact
+4.create view for them
+5.update the layout.cshtml in shared fol
+6.build and run the app
+
+--------------------------
+
+	Controllers
+
+	a. MVC Controller - this returns a view, same that we worked on
+	b. API controller - this returns JSON data, for WebAPI 
+
+
+	1. How to pass the data from controlle to view and view to controller
+
+-------------------------------------------------------------------------------------------------------
+
+	Viewbag is used to pass data from Controller to view
+	Viewdata is used to pass data from controller to view
+
+	viewbag is dynamic, it will detect the data type while rendering
+	Viewdata is strongly types, u have provide conversion 
+	
+
+
+	1. Add a new controller - shoppingController
+	2. Add 3 actions Productlist, SearchProduct, productSale
+	3. Add view for all them
+	4. update layout page
+	5. in the productlist action in contoller
+		add, before view
+		  List<string> pList = new List<string>()
+            {
+                "Cold-Drinks",
+                "Electronics",
+                "Cloths",
+                "Shoes",
+                "Accessories",
+                "Eateries"
+            };
+
+            ViewBag.products = pList;
+            ViewBag.totalProducts = pList.Count;
+
+	6. update the view with razor syntax
+
+		<h1 style="text-align:center"> Product List (@ViewBag.totalProducts) </h1>
+
+@*this is HTML page*@
+
+
+@*<ul>
+@foreach (var item in ViewBag.products)
+{
+    <li>@item</li>
+}
+</ul>*@
+
+@*<select>
+    @foreach (var item in ViewBag.products)
+    {
+        <option>@item</option>
+    }
+</select>*@
+
+@foreach (var item in ViewBag.products)
+{
+   @item <input type="checkbox"/>
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
