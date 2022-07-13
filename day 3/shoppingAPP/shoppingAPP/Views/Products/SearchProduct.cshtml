@@ -1,0 +1,21 @@
+﻿
+
+
+<form method="post">
+<input type="number" class="form-control" placeholder="Enter Product Id to Search Product" name="productId"/>
+<button class="btn btn-danger"> Search </button>
+</form>
+
+<div>
+    @if (ViewBag.hasData)
+    {
+     <h4> Product Id : @ViewBag.productinfo.pId</h4>
+    <h4> Product Name : @ViewBag.productinfo.pName</h4>
+    <h4> Product Category : @ViewBag.productinfo.pCategory</h4>
+    <h4> Product Price : @ViewBag.productinfo.pPrice</h4>
+    <h4> Product Is Available : @ViewBag.productinfo.pIsInStock</h4>
+    }
+    
+
+
+</div>

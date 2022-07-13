@@ -1,0 +1,22 @@
+1. Create a new project - ASP.net core MVC - shoppingAPP
+2. Add a new class file in Models folder
+	https://www.codepile.net/pile/mAzZxjAZ
+3. Build the application 
+
+4. Add a new controller ProductsController
+	add a new action DisplayProduct
+5. Reference the models folder on top 
+	using shoppingAPP.Models;
+6. call the GetAllProductsMethod and give data to viewbag
+7. create a new view DisplayProduct
+8. Program the view
+	https://www.codepile.net/pile/mAzZxjAZ
+
+9. Add a new Action SearchProduct, add a viewbag.hasData = false;
+
+10. Add 1 more Action SearchProduct(int productId)
+		call the GetProductById()
+
+11. Add a View, program the view
+
+12. Update all the layout links
