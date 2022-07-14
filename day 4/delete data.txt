@@ -1,0 +1,38 @@
+1. In the products model, added a new method to delete the product based on ID
+
+     public string DeleteProduct(int id)
+        {
+            var p = (from pr in pList
+                     where pr.pId == id
+                     select pr).Single();
+
+            pList.Remove(p);
+            return "Product Removed Successfully";
+        }
+2. In the contoller added 2 Methods, 1 to GetDelete Page and 1 to post value 
+
+	  [HttpGet]
+        public IActionResult DeleteProduct()
+        {
+	    ViewBag.deleteMessage = pObj.DeleteProduct(productId);
+            return View();
+        }
+        [HttpDelete]
+        public IActionResult DeleteProduct(int productId)
+        {
+            ViewBag.deleteMessage = pObj.DeleteProduct(productId);
+            return View();
+        }
+
+3. Add a new View (DeleteProduct.cshtml)
+
+4. Add a form with post method, add a textbox with name as parameter name in controller action, add a button
+
+
+<form method="POST">
+    <input type="number" placeholder="Enter product Id" name="productId" class="form-control"/>
+    <button class="btn btn-warning"> Delete Product </button>
+</form>
+
+<h1>  @ViewBag.deleteMessage </h1>
+ 

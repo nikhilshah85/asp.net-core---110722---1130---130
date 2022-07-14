@@ -1,0 +1,73 @@
+Get all the products
+Search the product by ID
+Add Product
+Delete Product
+
+Edit the product (Task)
+
+--------------------------------------------------------
+	Tomorrow we do the same shopping app 
+	with EF Core and SQL Server 
+
+
+--------------------------------------------------------------------------------------------------
+		Post the data (Add a new product)
+
+1. Created a new method in Model AddProduct
+	 public string AddProduct(Products newProduct)
+        {
+            pList.Add(newProduct);
+            return "Product Added Successfully";
+        }
+
+2. In the controller, add 2 new action, 1 for get and 1 for Post 
+	  public IActionResult AddProduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddProduct(Products newP)
+        {
+            ViewBag.addProductMessage = pObj.AddProduct(newP);
+            return View();
+        }
+3. Add a View with form to post the object
+	
+
+
+
+<h1 style="text-align:center"> Add a new Product </h1>
+
+<div class="background:lime;color:white">
+<form method="POST">
+
+    <input type="number" placeholder ="Enter Product Id" name="newP.pId" class="form-control"/>
+    <input type="text" placeholder="Enter Product Name" name="newP.pName" class="form-control"/>
+
+    <select name="newP.pCategory" class="form-control">
+        <option>Cold-Drink</option>
+        <option>Electronics</option>
+        <option>Fast-Food</option>
+    </select>
+
+    <input type="number" placeholder="Enter the price of Product" name="newP.pPrice" class="form-control" />
+    <input type="text" placeholder="Is Product Available" name="newP.pIsInStock" class="form-control" />
+
+    <button class="btn btn-success"> Add Product</button>
+</form>
+</div>
+
+
+4.Build the app, test the app, also update the layout page
+
+
+
+
+
+
+
+
+
+
+ 
