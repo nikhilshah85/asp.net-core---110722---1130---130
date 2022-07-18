@@ -1,0 +1,45 @@
+					Dependency Injection
+
+(this is global concept and pattern used by framework) 
+
+	1. A website has more than 1000 users in a day
+	2. Developers creates lots of objects in a web app
+		but they never(95% of developers) do not destroy the object, 
+							 clear the references,
+							close 	connections, files etc...
+
+			They all depend on framework, 
+			we know GC wil come and clear it
+				but when does gc comes >
+		The objects will keep on filling up the ram, cache etc, and after sometime ur application performance goes down
+		Admins will re-start  the app during low traffic time
+
+	3.Henceforth, pattern says let object cretion be a part of Framework
+		1. Framework will create/active your object, and inject it whereever required
+		2. It will also help with Shareing the object with other classes, based on your needs
+		3. It will destroy the object, as per your intentions / requrirements
+
+			Just dont create the object
+			for shareing the object, Framework Services will take care of you
+		
+		This is a 2 step process
+		1. where ever u need the object, inject the reference from a framewokk obj, this can be done in 3 ways
+			a. constructor Injection
+			b. Method injection
+			c. Property injection
+
+		2. In the services, configure, what is the lifetime of an object
+
+			a. PerCall (Transient) - Object will be created, method will be processed and object is destroyed 
+			b. PerSession (persession) - 1 object for every user, object is drestoyed when session end
+			c. SingleTon (singleTon) - 1 shared object for at application level - Global Object
+
+
+
+
+
+
+
+
+
+	

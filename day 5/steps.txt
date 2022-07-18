@@ -1,0 +1,174 @@
+
+Step 1: Create a database and design your table with some sample data
+
+create database shoppingAPP
+
+use shoppingAPP
+
+create table Products
+(
+	pId int primary key,
+	pName varchar(20),
+	pCategory varchar(20),
+	pPrice int,
+	pIsInStock bit
+)
+
+insert into Products values(101,'Pepsi','Cold-Drink',50,1)
+insert into Products values(102,'Latte','Hot-Drink',50,1)
+insert into Products values(103,'Mocha','Hot-Drink',50,0)
+insert into Products values(104,'IPhone','Electronics',50,1)
+insert into Products values(105,'Dell','Electronics',50,1)
+insert into Products values(106,'LG','Electronics',50,0)
+
+
+
+
+Step 2: Create a new ASP.Net core MVC webapp
+
+Step 3: Build the app
+	Need to add EF core Packages to application using Nuget package manger
+
+	Solution explorer -> Right click ur application -> Manage Nuget Packages
+
+	Browse -> Search EntityFramework
+	
+	Microsoft.EntityFrameworkCore.Design
+	Microsoft.EntityFrameworkCore.Tools
+	Microsoft.EntityFrameworkCore
+	Microsoft.EntityFrameworkCore.SqlServer
+
+	Build the application 
+
+step 4: Ready your database connection string, you will need this to fire a EF command
+
+
+	For Server Authentication 
+	"Server=WIN8\NIKHILINSTANCE; database= shoppingAPP;user id=sa ; password=Password1234"
+
+	For Windows Authentication
+	"Server=WIN8\NIKHILINSTANCE; database= shoppingAPP;integrated security=true"
+
+
+step 5: Tools -> Nuget package manager -> Nuget package manager console
+
+	Scaffold-DbContext "Server=WIN8\NIKHILINSTANCE; database= shoppingAPP;user id=sa ; 	password=Password1234" -OutputDir Models/EF -Provider Microsoft.EntityFrameworkCore.SqlServer
+	Close the open files, Nuget package manager console
+	Build the app
+
+Step 6: In the solution explorer, check model folder, it will have EF folder and a class created
+
+Step 7: close all the files, go to solution explorer
+	Add a new MVC Controller with EF Core
+
+	In the Pop-up dialouge, select Products class as Model class
+				select shoppingAPPContext as your Data context class
+
+	(this will take some minutes, and show a big error, click ok to error, and press add button again)
+		it will work, this is a bug in VS
+
+step 8: You now have a controller created for you, with all the code, and all the CRUD operations
+	also you have the views created in the view folder
+
+step 9: VS configured (Half) Dependency injection by default, 
+		we can either put the other half in config file
+		or
+		remove that half (this is what we are doing)
+
+	Thus in the controller file, instanstantiate new object for DBContext class 
+		private readonly shoppingAPPContext _context = new shoppingAPPContext();
+
+		Comment the constructor code
+
+	Build the app
+
+Step 10: Update the layout page, add link to Index action of Products controller
+
+step 11: Build the app, test the app, go to Products, you should see all the data
+						      perform Create, edit and delete operations
+
+	Congratulations !!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		Lab : Complete the MVC APP with EF Core with SQL Server - CRUD Operations
+
+		https://www.codepile.net/pile/0KwZx0OX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

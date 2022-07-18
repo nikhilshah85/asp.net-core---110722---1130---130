@@ -1,0 +1,186 @@
+			ASP.Net MVC APP using Entity Framework with SQL Server
+				(CRUD Operations)
+
+
+
+Step 1: Open SSMS, create database, add a table, add some sample data
+
+	create database shoppingDBMVC
+	
+	use shoppingDBMVC
+
+	create table Products
+	(
+		pId int primary key,	
+		pName varchar(20),
+		pCategory varchar(20),
+		pPrice int,
+		pIsInStock bit
+	)
+
+	insert into Products values(101,'Pepsi','Cold-Drink',50,1)
+	insert into Products values(102,'Iphone','Electronic',50,1)
+	insert into Products values(103,'Maggie','Junk-Food',50,0)
+	insert into Products values(104,'Sandwitch','Fast-Food',50,1)
+	insert into Products values(105,'Fossil','Electronics',50,1)
+	insert into Products values(106,'Trailhawk','SUV',50,0)
+
+Step 2: Create a new ASP.Net MVC Core app
+
+step 3: Build the application, we need to install EF packages for the app
+
+	 solution explorer -> right click appname -> Manage Nuget packages -> Browse -> EntityFrameworkCore
+
+	PLease make sure you install the right version as per your app version
+	we need to install 4 packages  - in a sequence  
+	
+	Microsoft.EntityFrameworkCore.Design
+	Microsoft.EntityFrameworkCore.Tools
+	Microsoft.EntityFrameworkCore
+	Microsoft.EntityFrameworkCore.SqlServer
+
+
+	Build the application 
+
+step 4: Ready your connection string 
+
+
+	SQL Server Auth
+	"server=WIN8\NIKHILINSTANCE;database=shoppingDBMVC;user id=sa ; password=Password1234"
+
+	Windows Auth
+	"server=WIN8\NIKHILINSTANCE;database=shoppingDBMVC;integrated security=true"
+
+step 5: we need to fire, EF core command to generate classes mapped to tables in database
+
+	Tool -> Nuget Package Manager -> Nuget Package Manager Console
+	
+	Scaffold-DbContext  "paste your connection string here " -OutputDir Models\EF
+
+
+	Press enter, it will ask for provider name, Type : Microsoft.EntityFrameworkCore.SqlServer
+
+	Build the app
+	Check the Model Folder, it will have an EF folder and classes created for your tables
+
+step 6: Build the app, we need to add a new controller with EF
+
+	Right click on controller folder -> Add Contoller -> MVC Controller with views using EF
+
+	in the Pop-up box, choose Table name as Model class, choose dbContext name for data context
+	
+	Click add, in VS 2022, it will take a minuite and show very very big error, press ok, and press add
+
+	and thus it will create you a controller and view
+
+
+
+Step 7: By Default, VS configures Half Dependency Injection for you and u need to do other half
+	we will remove the half part and will not use DI as of now
+
+
+	in the controller file that got generated, 
+	a. initilize the New object of DB context class (line 14)
+		 private readonly shoppingDBMVCContext _context = new shoppingDBMVCContext();
+	b. comment the constructor
+		   //public ProductsController(shoppingDBMVCContext context)
+	        //{
+        		//    _context = context;
+	        //}
+
+step 8: build the app
+
+step 9: update layout page, add a new link for Index page in products controller
+
+	    <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                        </li>
+
+step 10: Build the app, run the app, work with CRUD operations for products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Lab: Create asp.net mvc app with EF Core and SQL Server
+		CRUD Operations
+
+		https://www.codepile.net/pile/qMjQA6Pe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
